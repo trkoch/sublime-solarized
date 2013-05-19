@@ -21,13 +21,16 @@
 				<string>#073642</string>
 				<key>selection</key>
 				<string>#EEE8D5</string>
+				<key>selectionBorder</key>
+				<string>#ffffff</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Comment</string>
 			<key>scope</key>
-			<string>comment</string>
+			<string>comment, punctuation.definition.comment, punctuation.whitespace.comment</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -36,11 +39,24 @@
 				<string>#586E75</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
-			<string>String</string>
+			<string>Punctuation, braces etc.</string>
 			<key>scope</key>
-			<string>string</string>
+			<string>punctuation, punctuation.section, meta.brace</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#839496</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Strings</string>
+			<key>scope</key>
+			<string>string, string.quoted, punctuation.definition.string</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -49,42 +65,45 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>StringNumber</string>
+			<string>Regexp</string>
 			<key>scope</key>
-			<string>string</string>
+			<string>string.regexp, string.regexp punctuation.definition.string.begin, string.regexp punctuation.definition.string.end</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#586E75</string>
+				<string>#6C71c4</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Regexp</string>
+			<string>String escaped</string>
+			<key>comment</key>
+			<string>stand out from a regex</string>
 			<key>scope</key>
-			<string>string.regexp</string>
+			<string>constant.character.escape</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#DC322F</string>
+				<string>#839496</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Number</string>
 			<key>scope</key>
-			<string>constant.numeric</string>
+			<string>constant.numeric, keyword.other.unit, keyword.unit</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#D33682</string>
+				<string>#268BD2</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>Variable</string>
 			<key>scope</key>
-			<string>variable.language, variable.other</string>
+			<string>variable, variable.language, variable.other</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -128,6 +147,17 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Inherited class</string>
+			<key>scope</key>
+			<string>entity.other.inherited-class</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#268BD2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Function name</string>
 			<key>scope</key>
 			<string>entity.name.function</string>
@@ -139,15 +169,16 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Variable start</string>
+			<string>Variable</string>
 			<key>scope</key>
-			<string>punctuation.definition.variable</string>
+			<string>variable, support.other.variable, punctuation.definition.variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#859900</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Embedded code markers</string>
@@ -159,6 +190,7 @@
 				<string>#DC322F</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Built-in constant</string>
@@ -192,22 +224,19 @@
 				<string>#CB4B16</string>
 			</dict>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>Inherited class</string>
-			<key>scope</key>
-			<string>entity.other.inherited-class</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Function argument</string>
 			<key>scope</key>
 			<string>variable.parameter</string>
 			<key>settings</key>
-			<dict/>
+			<dict>
+				<key>foreground</key>
+				<string>#839496</string>
+			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Tag name</string>
@@ -215,8 +244,6 @@
 			<string>entity.name.tag</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
 				<key>foreground</key>
 				<string>#268BD2</string>
 			</dict>
@@ -225,11 +252,11 @@
 			<key>name</key>
 			<string>Tag start/end</string>
 			<key>scope</key>
-			<string>punctuation.definition.tag.html, punctuation.definition.tag.begin, punctuation.definition.tag.end</string>
+			<string>punctuation.definition.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#586E75</string>
+				<string>#657B83</string>
 			</dict>
 		</dict>
 		<dict>
@@ -243,6 +270,43 @@
 				<string>#93A1A1</string>
 			</dict>
 		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Continuation</string>
+			<key>scope</key>
+			<string>punctuation.separator.continuation</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#DC322F</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Special</string>
+			<key>scope</key>
+			<string>keyword.other.special-method</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CB4B16</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Invalid</string>
+			<key>scope</key>
+			<string>invalid</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#DC322f</string>
+			</dict>
+		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Library function</string>
@@ -256,22 +320,14 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Continuation</string>
-			<key>scope</key>
-			<string>punctuation.separator.continuation</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#DC322F</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>Library constant</string>
 			<key>scope</key>
 			<string>support.constant</string>
 			<key>settings</key>
-			<dict/>
+			<dict>
+				<key>foreground</key>
+				<string>#268BD2</string>
+			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -295,66 +351,16 @@
 				<string>#CB4B16</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
-			<string>Special</string>
+			<string>CSS: Property name</string>
 			<key>scope</key>
-			<string>keyword.other.special-method</string>
+			<string>support.type.property-name, meta.property-name.css</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#CB4B16</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Library variable</string>
-			<key>scope</key>
-			<string>support.other.variable</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Invalid</string>
-			<key>scope</key>
-			<string>invalid</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Quoted String</string>
-			<key>scope</key>
-			<string>string.quoted.double, string.quoted.single</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#2AA198</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Quotes</string>
-			<key>scope</key>
-			<string>punctuation.definition.string.begin, punctuation.definition.string.end</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#DC322F</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>CSS: Property name (body)</string>
-			<key>scope</key>
-			<string>entity.name.tag.css, support.type.property-name.css, meta.property-name.css, support.type.property-name.scss</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#839496</string>
+				<string>#93A1A1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -372,7 +378,7 @@
 			<key>name</key>
 			<string>CSS: Numeric Value (blue)</string>
 			<key>scope</key>
-			<string>constant.numeric.css, keyword.other.unit.css, keyword.unit.css, constant.other.color.rgb-value.css, constant.numeric.scss, constant.other.color.rgb-value.scss, keyword.other.unit.scss, punctuation.definition.constant.scss, punctuation.definition.constant.css, constant.other.rgb-value.css</string>
+			<string>constant.other.color.rgb-value, constant.other.rgb-value, source.css punctuation.definition.constant</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -416,7 +422,7 @@
 				<string>#CB4b16</string>
 			</dict>
 		</dict>
-		<dict>
+<!-- 		<dict>
 			<key>name</key>
 			<string>CSS: : , () (body)</string>
 			<key>scope</key>
@@ -428,7 +434,7 @@
 				<key>foreground</key>
 				<string>#657B83</string>
 			</dict>
-		</dict>
+		</dict> 
 		<dict>
 			<key>name</key>
 			<string>CSS: Selector > [] and non-spec tags (body)</string>
@@ -441,7 +447,7 @@
 				<key>foreground</key>
 				<string>#657B83</string>
 			</dict>
-		</dict>
+		</dict>-->
 		<dict>
 			<key>name</key>
 			<string>CSS: Tag (green)</string>
@@ -488,8 +494,6 @@
 			<string>entity.other.attribute-name.pseudo-element.css, entity.other.attribute-name.pseudo-class.css</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string></string>
 				<key>foreground</key>
 				<string>#CB4B16</string>
 			</dict>
@@ -498,13 +502,14 @@
 			<key>name</key>
 			<string>SCSS: Variables (pink)</string>
 			<key>scope</key>
-			<string>variable, variable.scss</string>
+			<string>variable.scss</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#D33682</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>JS: Function Name</string>
@@ -512,19 +517,6 @@
 			<string>meta.function.js, entity.name.function.js, support.function.dom.js</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#B58900</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>JS: Source</string>
-			<key>scope</key>
-			<string>text.html.basic source.js.embedded.html</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
 				<key>foreground</key>
 				<string>#B58900</string>
 			</dict>
@@ -573,28 +565,8 @@
 				<string>#268BD2</string>
 			</dict>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>()</string>
-			<key>scope</key>
-			<string>meta.brace.round, punctuation.definition.parameters.begin.js, punctuation.definition.parameters.end.js</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#93A1A1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>{}</string>
-			<key>scope</key>
-			<string>meta.brace.curly.js</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#839496</string>
-			</dict>
-		</dict>
+
+
 		<dict>
 			<key>name</key>
 			<string>HTML: Doctype</string>
@@ -608,57 +580,7 @@
 				<string>#839496</string>
 			</dict>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>HTML: Comment Block</string>
-			<key>scope</key>
-			<string>comment.block.html</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-				<key>foreground</key>
-				<string>#839496</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>HTML: Script</string>
-			<key>scope</key>
-			<string>entity.name.tag.script.html</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>HTML: Style</string>
-			<key>scope</key>
-			<string>source.css.embedded.html string.quoted.double.html</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#2AA198</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>HTML: Text</string>
-			<key>scope</key>
-			<string>text.html.ruby</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
-				<key>foreground</key>
-				<string>#839496</string>
-			</dict>
-		</dict>
-		<dict>
+<!-- 		<dict>
 			<key>name</key>
 			<string>HTML: =</string>
 			<key>scope</key>
@@ -670,7 +592,7 @@
 				<key>foreground</key>
 				<string>#657B83</string>
 			</dict>
-		</dict>
+		</dict> -->
 		<dict>
 			<key>name</key>
 			<string>HTML: something=</string>
@@ -709,10 +631,10 @@
 			</dict>
 		</dict>
 		<dict>
-			<key>name</key>
-			<string>HTML: style</string>
+			<key>Name</key>
+			<string>HTML: Embedded</string>
 			<key>scope</key>
-			<string>source.css.embedded.html entity.name.tag.style.html</string>
+			<string>source.css.embedded, source.js.embedded.hmtl</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -720,40 +642,17 @@
 			</dict>
 		</dict>
 		<dict>
-			<key>name</key>
-			<string>HTML: &lt;style&gt;</string>
+			<key>Name</key>
+			<string>Embedded</string>
 			<key>scope</key>
-			<string>entity.name.tag.style.html</string>
+			<string>source.css.embedded entity.name.tag, source.js.embedded entity.name.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
 				<string></string>
 			</dict>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>HTML: {}</string>
-			<key>scope</key>
-			<string>text.html.basic, punctuation.section.property-list.css</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>HTML: Embeddable</string>
-			<key>scope</key>
-			<string>source.css.embedded.html, comment.block.html</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
-				<key>foreground</key>
-				<string>#839496</string>
-			</dict>
-		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Ruby: Variable definition</string>
@@ -935,17 +834,6 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>PHP: Include</string>
-			<key>scope</key>
-			<string>keyword.control.import.include.php</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CB4B16</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>Ruby: erb =</string>
 			<key>scope</key>
 			<string>text.html.ruby meta.tag.inline.any.html</string>
@@ -968,6 +856,18 @@
 				<string></string>
 				<key>foreground</key>
 				<string>#2AA198</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>PHP: Include</string>
+			<key>scope</key>
+			<string>keyword.control.import.include.php</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#CB4B16</string>
 			</dict>
 		</dict>
 		<dict>
@@ -1189,7 +1089,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>PHP: Source Emebedded</string>
+			<string>PHP: Source Embedded</string>
 			<key>scope</key>
 			<string>source.php.embedded.block.html</string>
 			<key>settings</key>
@@ -1209,6 +1109,7 @@
 				<string>#CB4B16</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>C: constant</string>
@@ -1313,6 +1214,7 @@
 				<string>#B58900</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>diff: header</string>
@@ -1371,6 +1273,7 @@
 				<string>#2AA198</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>reST raw</string>
@@ -1382,6 +1285,7 @@
 				<string>#2AA198</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Other: Removal</string>
@@ -1406,6 +1310,7 @@
 				<string>#2AA198</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Tex: {}</string>
@@ -1599,6 +1504,7 @@
 				<string>#2AA198</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Python: storage</string>
@@ -1634,6 +1540,7 @@
 				<string>#B58900</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Shell: builtin</string>
@@ -1732,6 +1639,7 @@
 				<string>italic</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Java: import</string>
@@ -1797,6 +1705,7 @@
 				<string>#586E75</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Perl: variables</string>
@@ -1854,6 +1763,7 @@
 				<string>#DC322F</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>Name</key>
 			<string>Markdown punctuation</string>
@@ -1922,6 +1832,17 @@
 		</dict>
 		<dict>
 			<key>Name</key>
+			<string>Markdown raw</string>
+			<key>scope</key>
+			<string>markup.raw</string>
+			<key>settings</key>
+				<dict>
+					<key>foreground</key>
+					<string>#657B83</string>
+				</dict>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>Markdown linebreak</string>
 			<key>scope</key>
 			<string>meta.paragraph.markdown meta.dummy.line-break</string>
@@ -1931,6 +1852,7 @@
 					<string>#6C71c4</string>
 				</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>SublimeLinter Annotations</string>
@@ -2016,6 +1938,7 @@
 				<string>#cb4b16</string>
 			</dict>
 		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>SublimeBracketHighlighter</string>
