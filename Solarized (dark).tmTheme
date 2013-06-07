@@ -707,7 +707,7 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>bold</string>
+				<string>regular</string>
 				<key>foreground</key>
 				<string>#859900</string>
 			</dict>
